@@ -15,7 +15,7 @@ class _HomePageState extends State<HomePage> {
     var size = MediaQuery.of(context).size;
     return Scaffold(
       extendBodyBehindAppBar: true,
-      drawer: MyDrawer(),
+      drawer: const MyDrawer(),
       appBar: AppBar(
         elevation: 0.0,
         backgroundColor: Colors.transparent,
@@ -40,7 +40,7 @@ class _HomePageState extends State<HomePage> {
             children: [
               IconButton(
                   onPressed: () {},
-                  icon: Icon(
+                  icon: const Icon(
                     Icons.notifications_outlined,
                     size: 30,
                   )),
@@ -88,16 +88,81 @@ class _HomePageState extends State<HomePage> {
                           ),
                         ),
                       ),
+                      const SizedBox(
+                        height: 20,
+                      ),
                       Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          SizedBox(
-                            height: 50,
-                            width: 50,
-                            child: Container(
-                              decoration: BoxDecoration(
-                                  color: Colors.green,
-                                  borderRadius: BorderRadius.circular(100)),
+                          Column(
+                            children: [
+                              SizedBox(
+                                height: 50,
+                                width: 50,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      image: const DecorationImage(
+                                        image:
+                                            AssetImage('assets/images/car.png'),
+                                      ),
+                                      color: Colors.lightGreen[600],
+                                      borderRadius: BorderRadius.circular(100)),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              const Text('Car'),
+                            ],
+                          ),
+                          Padding(
+                            padding: const EdgeInsets.symmetric(horizontal: 40),
+                            child: Column(
+                              children: [
+                                SizedBox(
+                                  height: 50,
+                                  width: 50,
+                                  child: Container(
+                                    decoration: BoxDecoration(
+                                        image: const DecorationImage(
+                                          image: AssetImage(
+                                            'assets/images/hotel.png',
+                                          ),
+                                          scale: 0.7,
+                                        ),
+                                        color: Colors.yellow[700],
+                                        borderRadius:
+                                            BorderRadius.circular(100)),
+                                  ),
+                                ),
+                                const SizedBox(
+                                  height: 5,
+                                ),
+                                const Text('Hotel'),
+                              ],
                             ),
+                          ),
+                          Column(
+                            children: [
+                              SizedBox(
+                                height: 50,
+                                width: 50,
+                                child: Container(
+                                  decoration: BoxDecoration(
+                                      image: const DecorationImage(
+                                        image: AssetImage(
+                                            'assets/images/travel.png'),
+                                        scale: 1.8,
+                                      ),
+                                      color: Color.fromARGB(255, 26, 4, 77),
+                                      borderRadius: BorderRadius.circular(100)),
+                                ),
+                              ),
+                              const SizedBox(
+                                height: 5,
+                              ),
+                              const Text('Hotel'),
+                            ],
                           )
                         ],
                       )
@@ -122,7 +187,7 @@ class _HomePageState extends State<HomePage> {
                           horizontal: 20.0,
                         ),
                         child: CupertinoSearchTextField(
-                          prefixIcon: Icon(
+                          prefixIcon: const Icon(
                             Icons.search,
                             color: Colors.black,
                             size: 25,
@@ -133,7 +198,7 @@ class _HomePageState extends State<HomePage> {
                         ),
                       ),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 180,
                     ),
                     Padding(
